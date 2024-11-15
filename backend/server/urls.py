@@ -19,6 +19,6 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path("", include("neuromanceDB.urls")),
     path('admin/', admin.site.urls),
-    path("neuromanceDB/", include("neuromanceDB.urls")),
 ]

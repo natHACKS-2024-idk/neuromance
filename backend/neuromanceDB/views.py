@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import Individual
 from .serializers import IndividualSerializer
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
 def index(request):
     return HttpResponse("Hello, world.")
@@ -29,9 +30,32 @@ class MatchmakingView(APIView):
         return Response(match_scores)
     
 class Register(APIView):
+    """
+    POST individual user data
+    path: /api/register/
+    
+    Example POST data:
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "
+        "age": 25,
+        "password": "password"
+    }
+    """
     def post(self, request):
         serializer = IndividualSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
+    
+class GetUser(APIView):
+    """
+    GET individual user data by UUID
+    path: /api/users/<uuid:uuid>/
+    """
+    def get(self, request, uuid):
+        user = get_object_or_404(Individual, id=uuid)
+        serializer = IndividualSerializer(user)
+        return Response(serializer.data, status=200)

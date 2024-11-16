@@ -1,6 +1,7 @@
 import styles from "./ReadMuse.module.css";
 import { MuseClient } from "muse-js";
 import { useState } from "react";
+import { useAuth } from "../AuthContext/AuthContext";
 
 export default function ReadMuse() {
   const [isConnecting, setIsConnecting] = useState(false);
@@ -9,6 +10,10 @@ export default function ReadMuse() {
   const [recordings, setRecordings] = useState<
     Array<{ timestamp: number; AF7: number; AF8: number }>
   >([]);
+
+  const { user } = useAuth(); // Get the logged-in user
+
+  console.log(`User: ${user}`);
 
   async function connect() {
     try {
@@ -108,6 +113,12 @@ export default function ReadMuse() {
 
   return (
     <div className={styles.page}>
+      <header className={styles.header}>
+        <h1>
+          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+        </h1>
+      </header>
+      <main className={styles.main}>{/* Your existing code */}</main>
       <main className={styles.main}>
         {!connected ? (
           <button onClick={connect} disabled={isConnecting}>

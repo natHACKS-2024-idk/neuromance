@@ -3,7 +3,11 @@ import uuid
 
 class Individual(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255, blank=True, null=True)
+    firstName = models.CharField(max_length=255, blank=True, null=True)
+    lastName = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+    age = models.IntegerField(blank=True, null=True)
+    password = models.CharField(max_length=255, blank=True, null=True)
     
     # THIS IS OUR ALGORITHM
     # TODO: implement a better algorithm

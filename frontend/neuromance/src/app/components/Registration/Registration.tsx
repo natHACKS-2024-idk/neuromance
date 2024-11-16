@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Registration.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import axios from "axios";
 
 const StyledTextField = styled(TextField)({
   "& label": {
@@ -66,6 +67,16 @@ export default function Registration() {
 
   const handleRegister = () => {
     console.log("Register button clicked", formData);
+
+    console.log("Sending registration request");
+    axios
+      .post("http://localhost:8000/api/register/", formData)
+      .then((res) => {
+        console.log("Registration successful", res);
+      })
+      .catch((err) => {
+        console.error("Registration failed", err);
+      });
   };
 
   return (

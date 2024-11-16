@@ -3,12 +3,6 @@ import MatchListItem from "../MatchListItem/MatchListItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface Match {
-  userID: string;
-  PLI: number;
-}
-
-// Define the structure of the user data you expect
 interface UserInfo {
   firstName: string;
   lastName: string;
@@ -17,7 +11,6 @@ interface UserInfo {
   password: string;
 }
 
-// Define the structure of the match data with userInfo and PLI
 interface MatchWithUserInfo {
   userInfo: UserInfo;
   PLI: number;
@@ -78,7 +71,7 @@ export default function MatchList() {
           <MatchListItem key={index} match={match} />
         ))
       ) : (
-        <p>No matches available</p> // Optionally show a message if there are no matches
+        <p>No matches available</p>
       )}
     </div>
   );

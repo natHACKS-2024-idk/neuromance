@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MatchListItem.module.css";
 
-// Define the props interface for the MatchListItem component
 interface MatchListItemProps {
   match: {
     userInfo: {
@@ -19,7 +18,6 @@ export default function MatchListItem({ match }: MatchListItemProps) {
   const [matchAge, setMatchAge] = useState<number | null>(null);
   const [matchEmail, setMatchEmail] = useState<string | null>(null);
 
-  // Use effect to set match data
   useEffect(() => {
     setMatchName(`${match.userInfo.firstName} ${match.userInfo.lastName}`);
     setMatchAge(match.userInfo.age);

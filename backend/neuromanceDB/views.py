@@ -27,3 +27,11 @@ class MatchmakingView(APIView):
         match_scores = sorted(match_scores, key=lambda x: x['similarity_score'])
 
         return Response(match_scores)
+    
+class Register(APIView):
+    def post(self, request):
+        serializer = IndividualSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)

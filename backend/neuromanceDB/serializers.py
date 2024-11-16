@@ -4,7 +4,7 @@ from .models import Individual, BrainwaveData
 class BrainwaveDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = BrainwaveData
-        fields = ['time', 'af7', 'af8']
+        fields = ['individual','time', 'af7', 'af8']
 
 class IndividualSerializer(serializers.ModelSerializer):
     # brainwave_data = BrainwaveDataSerializer(many=True, read_only=True)

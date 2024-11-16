@@ -66,7 +66,6 @@ export default function Registration() {
 
   const handleRegister = () => {
     console.log("Register button clicked", formData);
-    // Handle the registration logic here, e.g., send formData to an API
   };
 
   return (
@@ -110,8 +109,8 @@ export default function Registration() {
           variant="outlined"
           size="small"
           required
-          name="age" // Corrected name here
-          value={formData.age} // Updated state field
+          name="age"
+          value={formData.age}
           onChange={handleInputChange}
         />
         <StyledTextField

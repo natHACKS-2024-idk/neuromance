@@ -125,18 +125,32 @@ export default function ReadMuse() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1>
-          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}, Please connect your Muse device and press Play.
+          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"},
+          Please connect your Muse device and press Play.
         </h1>
       </header>
       <br />
       <main className={styles.main}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/U8VBKOoe-iY?si=HPXYCvhOMZbs6QUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        <br/>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/U8VBKOoe-iY?si=HPXYCvhOMZbs6QUn"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>{" "}
+        <br />
         {!connected ? (
-          <button className={styles.connectButton} onClick={connect} disabled={isConnecting}>
+          <button
+            className={styles.connectButton}
+            onClick={connect}
+            disabled={isConnecting}
+          >
             {isConnecting ? "Connecting..." : "Connect and Collect"}
           </button>
         ) : (
-          <button className={styles.connectButton} onClick={disconnect}>Disconnect</button>
+          <button className={styles.connectButton} onClick={disconnect}>
+            Disconnect
+          </button>
         )}
       </main>
       <br />

@@ -3,6 +3,7 @@ import styles from "./Registration.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const StyledTextField = styled(TextField)({
   "& label": {
@@ -65,6 +66,8 @@ export default function Registration() {
     }));
   };
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleRegister = () => {
     console.log("Register button clicked", formData);
 
@@ -73,6 +76,7 @@ export default function Registration() {
       .post("http://localhost:8000/api/register/", formData)
       .then((res) => {
         console.log("Registration successful", res);
+        navigate("/read-muse");
       })
       .catch((err) => {
         console.error("Registration failed", err);

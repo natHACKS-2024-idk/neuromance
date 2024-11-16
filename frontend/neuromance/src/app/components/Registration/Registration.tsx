@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Registration.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -6,17 +7,15 @@ const StyledTextField = styled(TextField)({
   "& label": {
     color: "#ffffff !important",
   },
-
   "& input": {
     color: "white !important",
-    backgroundColor: "#2b2b2b", // lighter gray background inside the input
-    padding: "10px", // Optional: to add some padding around the text
-    borderRadius: "5px", // Optional: to add rounded corners
+    backgroundColor: "#2b2b2b",
+    padding: "10px",
+    borderRadius: "5px",
   },
   "& textarea": {
     color: "white !important",
   },
-
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
       border: "none",
@@ -30,11 +29,9 @@ const StyledTextField = styled(TextField)({
       border: "1px solid",
       borderColor: "#318CE7 !important",
     },
-    // style the slotPropr input icon color
     "& .MuiSvgIcon-root": {
       color: "#fff",
     },
-    // style the slotProps end adornment icon button
     "& .MuiIconButton-root": {
       color: "#fff",
       backgroundColor: "#2b2b2b",
@@ -42,7 +39,6 @@ const StyledTextField = styled(TextField)({
       height: "40px",
     },
   },
-
   "& .MuiFormHelperText-root": {
     color: "#ffffff",
     "&.Mui-error": {
@@ -52,7 +48,27 @@ const StyledTextField = styled(TextField)({
 });
 
 export default function Registration() {
-  const matchList = [];
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    age: "",
+    password: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleRegister = () => {
+    console.log("Register button clicked", formData);
+    // Handle the registration logic here, e.g., send formData to an API
+  };
+
   return (
     <div className={styles.registrationContainer}>
       <header className={styles.registrationHeader}>
@@ -66,12 +82,18 @@ export default function Registration() {
             variant="outlined"
             size="small"
             required
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleInputChange}
           />
           <StyledTextField
             label="Last Name"
             variant="outlined"
             size="small"
             required
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleInputChange}
           />
         </section>
         <StyledTextField
@@ -79,16 +101,34 @@ export default function Registration() {
           variant="outlined"
           size="small"
           required
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+        <StyledTextField
+          label="Age"
+          variant="outlined"
+          size="small"
+          required
+          name="age" // Corrected name here
+          value={formData.age} // Updated state field
+          onChange={handleInputChange}
         />
         <StyledTextField
           label="Password"
           variant="outlined"
           size="small"
           required
+          name="password"
+          type="password"
+          value={formData.password}
+          onChange={handleInputChange}
         />
       </main>
       <footer className={styles.registrationFooter}>
-        <button className={styles.registerBtn}>Register</button>
+        <button className={styles.registerBtn} onClick={handleRegister}>
+          Register
+        </button>
         <p className={styles.login}>
           Already have an account? <a href="/login">Log in</a>
         </p>

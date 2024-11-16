@@ -7,11 +7,11 @@ class BrainwaveDataSerializer(serializers.ModelSerializer):
         fields = ['time', 'af7', 'af8']
 
 class IndividualSerializer(serializers.ModelSerializer):
-    brainwave_data = BrainwaveDataSerializer(many=True, read_only=True)
+    # brainwave_data = BrainwaveDataSerializer(many=True, read_only=True)
 
     class Meta:
         model = Individual
-        fields = ['id', 'name', 'brainwave_data']  
+        fields = ['id', 'firstName', 'lastName', 'email', 'age', 'password']  
 
 class MatchmakingSerializer(serializers.Serializer):
     user = IndividualSerializer()  # Serialize the individual user data

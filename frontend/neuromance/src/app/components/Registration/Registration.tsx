@@ -3,6 +3,7 @@ import styles from "./Registration.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
+import { useAuth } from "../AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const StyledTextField = styled(TextField)({
@@ -68,6 +69,8 @@ export default function Registration() {
 
   const navigate = useNavigate(); // Initialize useNavigate
 
+  const { login } = useAuth(); // Access the login function
+
   const handleRegister = () => {
     console.log("Register button clicked", formData);
 
@@ -76,6 +79,16 @@ export default function Registration() {
       .post("http://localhost:8000/api/register/", formData)
       .then((res) => {
         console.log("Registration successful", res);
+
+        // Log the user in (store their data in context and localStorage)
+        login({
+          id: res.data.id,
+          firstName: res.data.firstName,
+          lastName: res.data.lastName,
+          email: res.data.email,
+        });
+
+        // Navigate to the next page
         navigate("/read-muse");
       })
       .catch((err) => {

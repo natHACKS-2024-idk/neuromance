@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    width: 80vw;
+    height: 30vw;
+  }
+  
+  .cardLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black solid 1px;
+    width: 20%;
+    height: 90%;
+    margin-right: 20px;
+}
+  
+  .cardImage {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+  }
+  
+  .cardRight {
+    flex: 2;
+    padding-left: 20px;
+    color: black;
+   
+  }
+  
+  .ulList {
+    list-style-type: none;
+    padding: 20px;
+  }
+  
+  .ulList li {
+    /* margin-bottom: 10px; */
+    padding-bottom: 30px;
+  }
+  

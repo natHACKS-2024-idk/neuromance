@@ -111,6 +111,12 @@ export default function ReadMuse() {
     return sum / samples.length; // Calculate and return the average
   }
 
+  // Include the user ID in the JSON string
+  const outputData = {
+    userId: user ? user.id : null,
+    recordings,
+  };
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -131,7 +137,7 @@ export default function ReadMuse() {
       <div>
         {/* Display the paired readings for AF7 and AF8 */}
         <h3>Recorded Data:</h3>
-        <pre>{JSON.stringify(recordings, null, 2)}</pre>
+        <pre>{JSON.stringify(outputData, null, 2)}</pre>
       </div>
     </div>
   );

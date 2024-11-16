@@ -9,7 +9,6 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Registration />} />
-        <Route path="/registration" element={<Registration />} />
         <Route path="/read-muse" element={<ReadMuse />} />
       </Routes>
     </Router>

@@ -1,0 +1,14 @@
+.main {
+    margin-left: 20vw;;
+}
+
+.connectButton{
+    height: 50px;
+    width: 200px;
+    margin-left: 20%;
+    font-size: large;
+}
+
+.recordedData{
+    margin-left: 25%;
+}

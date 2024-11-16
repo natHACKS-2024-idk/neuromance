@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./ReadMuse.module.css";
 import { MuseClient } from "muse-js";
 import { useState } from "react";
@@ -10,8 +11,10 @@ export default function ReadMuse() {
   const [recordings, setRecordings] = useState<
     Array<{ timestamp: number; AF7: number; AF8: number }>
   >([]);
+  const [isDataReady, setIsDataReady] = useState(false); // State to track when data is ready
 
   const { user } = useAuth(); // Get the logged-in user
+  const navigate = useNavigate(); // Initialize useNavigate
 
   console.log(`User: ${user}`);
 
@@ -49,6 +52,7 @@ export default function ReadMuse() {
         // After 5 seconds, pair readings from AF7 and AF8 and compute the desired dictionary
         const pairedReadings = pairReadings(af7Readings, af8Readings);
         setRecordings(pairedReadings);
+        setIsDataReady(true); // Set data as ready
         console.log(pairedReadings);
       }, 5000);
     } catch (err) {
@@ -139,6 +143,11 @@ export default function ReadMuse() {
         <h3>Recorded Data:</h3>
         <pre>{JSON.stringify(outputData, null, 2)}</pre>
       </div>
+      {isDataReady && (
+        <div>
+          <button onClick={() => navigate("/match")}>Go to Match</button>
+        </div>
+      )}
     </div>
   );
 }

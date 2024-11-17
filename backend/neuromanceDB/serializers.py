@@ -22,8 +22,8 @@ class BrainwaveDataSerializer(serializers.ModelSerializer):
 
 
 class IndividualSerializer(serializers.ModelSerializer):
-    # brainwave_data = BrainwaveDataSerializer(many=True, read_only=True)
+    brainwave_data = BrainwaveDataSerializer(many=True, read_only=True)
 
     class Meta:
         model = Individual
-        fields = ['id', 'firstName', 'lastName', 'email', 'age', 'password']  
+        fields = ['id', 'firstName', 'lastName', 'email', 'age', 'password', 'brainwave_data']  

@@ -125,7 +125,7 @@ class MatchmakingView(APIView):
             denoised_signal_2 = self.wavelet_denoising(filtered_signal_2)
 
             # Compute PLI between df1 and df2
-            average_pli = self.compute_epoch_based_pli(denoised_signal_1, denoised_signal_2, 0.01, sampling_rate)
+            average_pli = self.compute_epoch_based_pli(denoised_signal_1, denoised_signal_2, 0.04, sampling_rate)
 
             comparisons.append({
                 'individual_id': individual_id,

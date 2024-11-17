@@ -129,7 +129,7 @@ export default function ReadMuse() {
     userId: user ? user.id : null,
     recordings,
   };
-  
+
   // Function to send data to the backend endpoint
   async function saveData() {
     console.log(user?.id);
@@ -159,12 +159,17 @@ export default function ReadMuse() {
     }
   }
 
+  const handleToMatch = () => {
+    // send output as payload to match
+    navigate("/match", { state: { outputData } });
+  };
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
         <h1>
-          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}! Please
-          connect your Muse device and press Play.
+          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}!
+          Please connect your Muse device and press Play.
         </h1>
       </header>
       <main className={styles.main}>
@@ -197,12 +202,18 @@ export default function ReadMuse() {
       </main>
       <br />
       <div className={styles.recordedData}>
-        <pre className={styles.dataList}>{JSON.stringify(outputData, null, 2)}</pre>
+        <pre className={styles.dataList}>
+          {JSON.stringify(outputData, null, 2)}
+        </pre>
       </div>
       {isDataReady && (
         <div>
-          <button className={styles.saveButton} onClick={saveData}>Save Data</button>
-          <button className={styles.matchButton} onClick={() => navigate("/match")}>Go to Match</button>
+          <button className={styles.saveButton} onClick={saveData}>
+            Save Data
+          </button>
+          <button className={styles.matchButton} onClick={handleToMatch}>
+            Go to Match
+          </button>
         </div>
       )}
     </div>

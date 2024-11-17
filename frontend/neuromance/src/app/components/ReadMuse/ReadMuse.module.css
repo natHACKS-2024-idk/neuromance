@@ -5,7 +5,14 @@
 .connectButton{
     height: 50px;
     width: 200px;
-    margin-left: 20%;
+    margin-left: 0%;
+    font-size: large;
+}
+
+.collectButton{
+    height: 50px;
+    width: 200px;
+    margin-left: 19%;
     font-size: large;
 }
 

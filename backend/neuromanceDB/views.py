@@ -124,15 +124,18 @@ class MatchmakingView(APIView):
             denoised_signal_2 = self.wavelet_denoising(filtered_signal_2)
 
             # Compute PLI between df1 and df2
-            average_pli = self.compute_epoch_based_pli(denoised_signal_1, denoised_signal_2, 0.01, sampling_rate)
+            average_pli = self.compute_epoch_based_pli(denoised_signal_1, denoised_signal_2, 0.04, sampling_rate)
 
             comparisons.append({
                 'individual_id': individual_id,
                 'PLI': average_pli
             })
 
+        # Sort the comparisons by PLI in descending order
+        sorted_comparisons = sorted(comparisons, key=lambda x: float(x['PLI']), reverse=True)
+
         # Return the comparisons as a JSON response
-        return JsonResponse({'comparisons': comparisons}, status=200)
+        return JsonResponse({'comparisons': sorted_comparisons}, status=200)
 
     def bandpass_filter(self, data, lowcut, highcut, fs, order=5):
         """

@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%; /* Circular container for the image */
-  width: 220px; /* Larger image container */
+  width: 180px; /* Larger image container */
   height: 80px;
   overflow: hidden; /* Ensures the image fits within the circle */
   background-color: #ffffff; /* White background for the image area */

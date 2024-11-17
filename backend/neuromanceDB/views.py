@@ -217,7 +217,7 @@ class MatchmakingView(APIView):
         # Compute the average PLI across all epochs
         if pli_values:
             average_pli = np.mean(pli_values)
-            return average_pli
+            return "{:.3f}".format(average_pli)
         else:
             print("Warning: No valid epochs were processed.")
             return None

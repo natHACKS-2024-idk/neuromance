@@ -32,7 +32,6 @@ export default function MatchListItem({ match }: MatchListItemProps) {
           alt="Card Image"
         />
       </div>
-
       <div className={styles.cardRight}>
         <ul className={styles.ulList}>
           <li>
@@ -42,7 +41,7 @@ export default function MatchListItem({ match }: MatchListItemProps) {
             <label>Age: </label> {matchAge}
           </li>
           <li>
-            <label>Email Id: </label> {matchEmail}
+            <label>Email: </label> {matchEmail}
           </li>
         </ul>
       </div>

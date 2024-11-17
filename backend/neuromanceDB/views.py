@@ -1,9 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Individual
-from .serializers import IndividualSerializer
+from .serializers import IndividualSerializer, BrainwaveDataSerializer
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
+from rest_framework import status
 
 def index(request):
     return HttpResponse("Hello, world.")
@@ -59,3 +60,37 @@ class GetUser(APIView):
         user = get_object_or_404(Individual, id=uuid)
         serializer = IndividualSerializer(user)
         return Response(serializer.data, status=200)
+    
+class SaveBrainwaveData(APIView):
+    """
+    POST brainwave data for a specific user
+    """
+    def post(self, request, uuid):
+        # Get the user (Individual) by UUID
+        user = get_object_or_404(Individual, id=uuid)
+
+        # Extract the recordings list from the request data
+        recordings = request.data.get('recordings', [])
+
+        # Validate and save each recording
+        saved_data = []
+        for recording in recordings:
+            # Prepare the data for the serializer (convert field names to match model fields)
+            recording_data = {
+                "time": recording["timestamp"],
+                "af7": recording["AF7"],
+                "af8": recording["AF8"]
+            }
+
+            # Serialize each recording
+            serializer = BrainwaveDataSerializer(data=recording_data)
+            if serializer.is_valid():
+                # Save each valid recording, associating it with the user (individual)
+                serializer.save(individual=user)
+                saved_data.append(serializer.data)
+            else:
+                # If any of the recordings are invalid, return errors
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # If all recordings are saved successfully, return the saved data
+        return Response(saved_data, status=status.HTTP_201_CREATED)

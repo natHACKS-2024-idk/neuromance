@@ -2,6 +2,7 @@ import styles from "./MatchList.module.css";
 import MatchListItem from "../MatchListItem/MatchListItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 interface UserInfo {
   firstName: string;
@@ -18,6 +19,11 @@ interface MatchWithUserInfo {
 
 export default function MatchList() {
   const [matches, setMatches] = useState<MatchWithUserInfo[]>([]); // Initialize as an empty array
+
+  const location = useLocation();
+  const outputData = location.state?.outputData;
+
+  console.log("Received Output Data:", outputData);
 
   // matches test data
   const matchesTestData = [

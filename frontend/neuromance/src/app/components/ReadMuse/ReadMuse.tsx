@@ -16,6 +16,10 @@ export default function ReadMuse() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  const handleNavigation = () => {
+    navigate("/match", { state: { outputData } });
+  };
+
   console.log(`User: ${user}`);
 
   // Connect to Muse device
@@ -129,7 +133,7 @@ export default function ReadMuse() {
     userId: user ? user.id : null,
     recordings,
   };
-  
+
   // Function to send data to the backend endpoint
   async function saveData() {
     console.log(user?.id);
@@ -163,8 +167,8 @@ export default function ReadMuse() {
     <div className={styles.page}>
       <header className={styles.header}>
         <h1>
-          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}! Please
-          connect your Muse device and press Play.
+          Welcome, {user ? `${user.firstName} ${user.lastName}` : "Guest"}!
+          Please connect your Muse device and press Play.
         </h1>
       </header>
       <main className={styles.main}>
@@ -203,7 +207,7 @@ export default function ReadMuse() {
       {isDataReady && (
         <div>
           <button onClick={saveData}>Save Data</button>
-          <button onClick={() => navigate("/match")}>Go to Match</button>
+          <button onClick={handleNavigation}>Go to Match</button>
         </div>
       )}
     </div>

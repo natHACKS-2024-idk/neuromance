@@ -132,8 +132,11 @@ class MatchmakingView(APIView):
                 'PLI': average_pli
             })
 
+        # Sort the comparisons by PLI in descending order
+        sorted_comparisons = sorted(comparisons, key=lambda x: float(x['PLI']), reverse=True)
+
         # Return the comparisons as a JSON response
-        return JsonResponse({'comparisons': comparisons}, status=200)
+        return JsonResponse({'comparisons': sorted_comparisons}, status=200)
 
     def bandpass_filter(self, data, lowcut, highcut, fs, order=5):
         """

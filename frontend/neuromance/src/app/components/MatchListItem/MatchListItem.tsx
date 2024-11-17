@@ -43,6 +43,9 @@ export default function MatchListItem({ match }: MatchListItemProps) {
           <li>
             <label>Email: </label> {matchEmail}
           </li>
+          <li>
+            <label>PLI: </label> {match.PLI}
+          </li>
         </ul>
       </div>
     </div>

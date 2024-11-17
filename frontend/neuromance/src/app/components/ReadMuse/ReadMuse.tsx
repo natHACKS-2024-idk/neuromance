@@ -121,6 +121,35 @@ export default function ReadMuse() {
     recordings,
   };
 
+  // Function to send data to the backend endpoint
+  async function saveData() {
+    console.log(user?.id);
+    if (user?.id) {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/api/saveBrainwaveData/${user.id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(outputData),
+          }
+        );
+
+        if (response.ok) {
+          console.log("Brainwave data saved successfully.");
+        } else {
+          console.error("Error saving brainwave data.");
+        }
+      } catch (err) {
+        console.error("Failed to save brainwave data:", err);
+      }
+    } else {
+      console.error("User ID is missing");
+    }
+  }
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -161,6 +190,7 @@ export default function ReadMuse() {
       </div>
       {isDataReady && (
         <div>
+          <button onClick={saveData}>Save Data</button>
           <button onClick={() => navigate("/match")}>Go to Match</button>
         </div>
       )}

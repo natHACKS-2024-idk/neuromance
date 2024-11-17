@@ -197,13 +197,12 @@ export default function ReadMuse() {
       </main>
       <br />
       <div className={styles.recordedData}>
-        <h3>Recorded Data:</h3>
-        <pre>{JSON.stringify(outputData, null, 2)}</pre>
+        <pre className={styles.dataList}>{JSON.stringify(outputData, null, 2)}</pre>
       </div>
       {isDataReady && (
         <div>
-          <button onClick={saveData}>Save Data</button>
-          <button onClick={() => navigate("/match")}>Go to Match</button>
+          <button className={styles.saveButton} onClick={saveData}>Save Data</button>
+          <button className={styles.matchButton} onClick={() => navigate("/match")}>Go to Match</button>
         </div>
       )}
     </div>

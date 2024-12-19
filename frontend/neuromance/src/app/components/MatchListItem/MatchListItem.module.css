@@ -1,51 +1,81 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 20px;
-    background-color: #f9f9f9;
-    width: 80vw;
-    height: 30vw;
-  }
-  
-  .cardLeft {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: black solid 1px;
-    width: 20%;
-    height: 90%;
-    margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  background-color: #555; /* Dark grey background */
+  width: 90%; /* Increased width for a wider card */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for contrast */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-  
-  .cardImage {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
 
-  }
-  
-  .cardRight {
-    flex: 2;
-    padding-left: 20px;
-    color: black;
-   
-  }
-  
-  .ulList {
-    list-style-type: none;
-    padding: 20px;
-  }
-  
-  .ulList li {
-    /* margin-bottom: 10px; */
-    padding-bottom: 30px;
-  }
-  
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Enhanced hover shadow */
+}
+
+.cardLeft {
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Circular container for the image */
+  width: 180px; /* Larger image container */
+  height: 80px;
+  overflow: hidden; /* Ensures the image fits within the circle */
+  background-color: #ffffff; /* White background for the image area */
+}
+
+.cardLeft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardRight {
+  flex: 0.8;
+  color: #ffffff; /* White text for better contrast on the dark grey background */
+  padding-left: 20px;
+}
+
+.ulList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ulList li {
+  padding-bottom: 15px;
+  font-size: 1.2rem; /* Larger font for better readability */
+}
+
+.ulList label {
+  font-weight: bold;
+  color: #fff;
+}
+
+.buttonContainer {
+  margin-top: 15px;
+}
+
+.button {
+  background-color: #007bff; /* Blue background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem; /* Slightly larger font for buttons */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button:active {
+  transform: scale(0.98); /* Subtle click effect */
+}

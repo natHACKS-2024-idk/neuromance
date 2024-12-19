@@ -43,8 +43,9 @@ def get_individuals_with_brainwave_data():
     return individuals_data
 
 class MatchmakingView(APIView):
-    def get(self, request):
-        #print("request: ", request.data)
+    def post(self, request):
+        print("request: ", request.data)
+        print("\n\n\n")
         # Parse the JSON body of the request
        # Access the parsed JSON data directly from request.data
         user_id = request.data.get('userId')  # Get the 'userID' attribute from the parsed JSON

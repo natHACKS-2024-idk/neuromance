@@ -12,6 +12,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.7",
+    "axios": "^1.7.7",
     "muse-js": "^3.3.0",
     "next": "15.0.3",
     "react": "^18.3.1",

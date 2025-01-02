@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import styles from "./page.module.css";
+import NavBar from "./components/NavBar/NavBar";
 
 // Dynamically import your component to disable SSR
 const AppRouter = dynamic(() => import("./utils/AppRouter/AppRouter"), {
@@ -11,9 +12,8 @@ const AppRouter = dynamic(() => import("./utils/AppRouter/AppRouter"), {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <AppRouter />
-      </main>
+      <NavBar />
+      <AppRouter />
     </div>
   );
 }

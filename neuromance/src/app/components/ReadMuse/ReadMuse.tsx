@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./ReadMuse.module.css";
 import { MuseClient } from "muse-js";
 import { useState } from "react";
-import { useAuth } from "../AuthContext/AuthContext";
+import { useAuth } from "../../utils/AuthContext/AuthContext";
 
 export default function ReadMuse() {
   const [isConnecting, setIsConnecting] = useState(false);

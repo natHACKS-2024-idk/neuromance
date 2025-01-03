@@ -1,0 +1,34 @@
+.section {
+  padding: 5rem 0;
+  background-color: #1a202c;
+}
+
+.container {
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  color: #9f7aea;
+}

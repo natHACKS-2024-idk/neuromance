@@ -12,7 +12,6 @@ const AppRouter = dynamic(() => import("./utils/AppRouter/AppRouter"), {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <NavBar />
       <AppRouter />
     </div>
   );

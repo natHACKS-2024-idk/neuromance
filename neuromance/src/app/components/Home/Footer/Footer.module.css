@@ -1,0 +1,35 @@
+.footer {
+  background-color: #1a202c; /* Gray-900 */
+  padding: 3rem 0; /* py-12 */
+}
+
+.container {
+  max-width: 112rem; /* 7xl */
+  margin: 0 auto;
+  padding: 0 1rem; /* px-4 */
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.brainIcon {
+  height: 2rem; /* h-8 */
+  width: 2rem; /* w-8 */
+  color: #9f7aea; /* Purple-400 */
+}
+
+.heartIcon {
+  height: 2rem; /* h-8 */
+  width: 2rem; /* w-8 */
+  color: #ed64a6; /* Pink-400 */
+  margin-left: 0.5rem; /* ml-2 */
+}
+
+.text {
+  text-align: center;
+  color: #a0aec0; /* Gray-400 */
+}

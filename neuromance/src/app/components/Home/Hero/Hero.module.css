@@ -1,0 +1,82 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #2d3748; /* Gray-800 */
+}
+
+.container {
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.brainIcon {
+  height: 3rem;
+  width: 3rem;
+  color: #9f7aea; /* Purple-400 */
+}
+
+.heartIcon {
+  height: 3rem;
+  width: 3rem;
+  color: #f687b3; /* Pink-400 */
+  margin-left: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #d1d5db; /* Gray-300 */
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #9ca3af; /* Gray-400 */
+  max-width: 40rem;
+  margin: 0 auto 3rem;
+}
+
+.ctaButton {
+  background-color: #9f7aea; /* Purple-500 */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  transition: background-color 0.3s;
+}
+
+.ctaButton:hover {
+  background-color: #805ad5; /* Purple-600 */
+}
+
+.arrowIcon {
+  margin-left: 0.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
+}

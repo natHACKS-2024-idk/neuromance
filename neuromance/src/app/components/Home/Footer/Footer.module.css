@@ -1,32 +1,32 @@
 .footer {
-  background-color: #1a202c; /* Gray-900 */
-  padding: 3rem 0; /* py-12 */
+  background-color: #1a202c;
+  padding: 3rem 0;
 }
 
 .container {
-  max-width: 112rem; /* 7xl */
+  max-width: 112rem;
   margin: 0 auto;
-  padding: 0 1rem; /* px-4 */
+  padding: 0 1rem;
 }
 
 .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem; /* mb-4 */
+  margin-bottom: 1rem;
 }
 
 .brainIcon {
-  height: 2rem; /* h-8 */
-  width: 2rem; /* w-8 */
-  color: #9f7aea; /* Purple-400 */
+  height: 2rem;
+  width: 2rem;
+  color: #9f7aea;
 }
 
 .heartIcon {
-  height: 2rem; /* h-8 */
-  width: 2rem; /* w-8 */
-  color: #ed64a6; /* Pink-400 */
-  margin-left: 0.5rem; /* ml-2 */
+  height: 2rem;
+  width: 2rem;
+  color: #ed64a6;
+  margin-left: 0.5rem;
 }
 
 .text {

@@ -1,6 +1,6 @@
 .section {
   padding: 5rem 0;
-  background-color: #1a202c; /* Gray-900 */
+  background-color: #1a202c;
 }
 
 .container {
@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 1.875rem; /* 3xl */
+  font-size: 1.875rem;
   font-weight: bold;
   text-align: center;
   color: #ffffff;
@@ -22,7 +22,6 @@
   grid-template-columns: 1fr;
   gap: 3rem;
 
-  /* Medium screens and up */
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -31,5 +30,5 @@
 .icon {
   height: 2rem;
   width: 2rem;
-  color: #9f7aea; /* Purple-400 */
+  color: #9f7aea;
 }

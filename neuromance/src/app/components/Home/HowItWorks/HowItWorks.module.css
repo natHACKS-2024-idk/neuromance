@@ -1,6 +1,6 @@
 .section {
   padding: 5rem 0;
-  background-color: #2d3748; /* Gray-800 */
+  background-color: #2d3748;
 }
 
 .container {
@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 1.875rem; /* 3xl */
+  font-size: 1.875rem;
   font-weight: bold;
   text-align: center;
   color: #ffffff;
@@ -22,7 +22,6 @@
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  /* Medium screens and up */
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }

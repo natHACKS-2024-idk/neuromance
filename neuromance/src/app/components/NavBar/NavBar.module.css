@@ -40,12 +40,12 @@
   color: #f687b3;
 }
 
-.signInUpContainer {
+.signInUp {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .desktopNav {
+  .signInUp {
     display: flex;
     align-items: center;
     gap: 1rem;

@@ -17,7 +17,7 @@ export default function Navbar(): JSX.Element {
             </div>
             <NavLinks />
           </div>
-          <div className={styles.signInUpContainer}>
+          <div className={styles.signInUp}>
             <div className={styles.buttons}>
               <button className={styles.signInButton}>Sign In</button>
               <button className={styles.signUpButton}>Sign Up</button>

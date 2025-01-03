@@ -16,6 +16,12 @@
   height: 4rem;
 }
 
+.logoNav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
 .logoWrapper {
   display: flex;
   align-items: center;
@@ -34,7 +40,7 @@
   color: #f687b3;
 }
 
-.desktopNav {
+.signInUpContainer {
   display: none;
 }
 

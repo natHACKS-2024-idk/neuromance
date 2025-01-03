@@ -4,9 +4,11 @@
 
 ## Neuromance
 
-- `src` directory containing the frontend code
+- `src/app` directory containing the frontend code
 
   - `components` directory containing React components
+
+  - `utils` contains components for carrying out specific tasks
 
 - `public` directory containing public static files
 

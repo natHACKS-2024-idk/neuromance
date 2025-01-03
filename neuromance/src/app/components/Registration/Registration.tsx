@@ -3,7 +3,7 @@ import styles from "./Registration.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
-import { useAuth } from "../AuthContext/AuthContext";
+import { useAuth } from "../../utils/AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const StyledTextField = styled(TextField)({

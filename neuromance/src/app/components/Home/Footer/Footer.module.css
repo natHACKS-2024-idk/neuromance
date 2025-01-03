@@ -1,0 +1,35 @@
+.footer {
+  background-color: #1a202c;
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.brainIcon {
+  height: 2rem;
+  width: 2rem;
+  color: #9f7aea;
+}
+
+.heartIcon {
+  height: 2rem;
+  width: 2rem;
+  color: #ed64a6;
+  margin-left: 0.5rem;
+}
+
+.text {
+  text-align: center;
+  color: #a0aec0; /* Gray-400 */
+}

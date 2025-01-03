@@ -1,9 +1,10 @@
 "use client";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ReadMuse from "../ReadMuse/ReadMuse";
-import Registration from "../Registration/Registration";
-import MatchList from "../MatchList/MatchList";
+import Home from "../../components/Home/Home";
+import ReadMuse from "../../components/ReadMuse/ReadMuse";
+import Registration from "../../components/Registration/Registration";
+import MatchList from "../../components/MatchList/MatchList";
 import { AuthProvider } from "../AuthContext/AuthContext";
 
 const AppRouter = () => {
@@ -11,7 +12,8 @@ const AppRouter = () => {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Registration />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="/read-muse" element={<ReadMuse />} />
           <Route path="/match" element={<MatchList />} />
         </Routes>

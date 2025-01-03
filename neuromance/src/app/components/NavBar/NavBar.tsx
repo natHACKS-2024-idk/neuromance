@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Brain } from "lucide-react";
+import { Brain, Heart } from "lucide-react";
 import { NavLinks } from "./NavLinks";
 import styles from "./Navbar.module.css";
 
@@ -11,8 +11,10 @@ export default function Navbar(): JSX.Element {
       <div className={styles.container}>
         <div className={styles.inner}>
           {/* Logo */}
-          <Brain className={styles.logo} />
-
+          <div className={styles.logoWrapper}>
+            <Brain className={styles.logoBrain} />
+            <Heart className={styles.logoHeart} />
+          </div>
           {/* Desktop Navigation */}
           <div className={styles.desktopNav}>
             <NavLinks />

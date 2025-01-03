@@ -1,31 +1,39 @@
-/* Navbar Container */
 .navbar {
-  background-color: #111827; /* bg-gray-900 */
-  border-bottom: 1px solid #1f2937; /* border-gray-800 */
+  background-color: #111827;
+  border-bottom: 1px solid #1f2937;
 }
 
-/* Content Container */
 .container {
-  max-width: 1280px; /* max-w-7xl */
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem; /* px-4 */
+  padding: 0 1rem;
 }
 
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem; /* h-16 */
+  height: 4rem;
 }
 
-/* Logo */
-.logo {
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoBrain {
   height: 1.5rem;
   width: 1.5rem;
-  color: #a78bfa; /* Purple-400 */
+  color: #a78bfa;
 }
 
-/* Desktop Navigation */
+.logoHeart {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #f687b3;
+}
+
 .desktopNav {
   display: none;
 }
@@ -34,23 +42,22 @@
   .desktopNav {
     display: flex;
     align-items: center;
-    gap: 1rem; /* space-x-4 */
+    gap: 1rem;
   }
 }
 
-/* Buttons */
 .buttons {
   display: flex;
   align-items: center;
-  gap: 1rem; /* space-x-4 */
-  margin-left: 1rem; /* ml-4 */
+  gap: 1rem;
+  margin-left: 1rem;
 }
 
 .signInButton {
-  color: #d1d5db; /* text-gray-300 */
-  padding: 0.5rem 0.75rem; /* px-3 py-2 */
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
+  color: #d1d5db;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   background: none;
   border: none;
   cursor: pointer;
@@ -58,21 +65,21 @@
 }
 
 .signInButton:hover {
-  color: #ffffff; /* text-white */
+  color: #ffffff;
 }
 
 .signUpButton {
-  background-color: #7c3aed; /* bg-purple-600 */
-  color: #ffffff; /* text-white */
-  padding: 0.5rem 1rem; /* px-4 py-2 */
-  border-radius: 9999px; /* rounded-full */
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
+  background-color: #7c3aed;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .signUpButton:hover {
-  background-color: #6d28d9; /* bg-purple-700 */
+  background-color: #6d28d9;
 }

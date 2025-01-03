@@ -1,28 +1,78 @@
+/* Navbar Container */
 .navbar {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  background-color: #5b5b5b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  gap: 2rem;
-  width: 100%;
+  background-color: #111827; /* bg-gray-900 */
+  border-bottom: 1px solid #1f2937; /* border-gray-800 */
 }
 
-.navbar__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #333;
+/* Content Container */
+.container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1rem; /* px-4 */
 }
 
-.navbar__links {
+.inner {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  height: 4rem; /* h-16 */
+}
+
+/* Logo */
+.logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #a78bfa; /* Purple-400 */
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+  }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space-x-4 */
+  margin-left: 1rem; /* ml-4 */
+}
+
+.signInButton {
+  color: #d1d5db; /* text-gray-300 */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.signInButton:hover {
+  color: #ffffff; /* text-white */
+}
+
+.signUpButton {
+  background-color: #7c3aed; /* bg-purple-600 */
+  color: #ffffff; /* text-white */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signUpButton:hover {
+  background-color: #6d28d9; /* bg-purple-700 */
 }

@@ -11,17 +11,17 @@ export function HowItWorks(): JSX.Element {
           <Step
             number={1}
             title="Connect Device"
-            description="Sync your neuro-headset with our app"
+            description="Sync your muse headset using bluetooth"
           />
           <Step
             number={2}
             title="Record Patterns"
-            description="We analyze your unique neural responses"
+            description="We analyze your unique neural responses as you interact with some stimuli"
           />
           <Step
             number={3}
             title="Match Algorithm"
-            description="Our AI finds your compatible matches"
+            description="Our algorithm finds your compatible matches"
           />
           <Step
             number={4}

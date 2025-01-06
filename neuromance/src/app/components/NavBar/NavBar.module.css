@@ -16,10 +16,20 @@
   height: 4rem;
 }
 
+.logoNav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
 .logoWrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .logoBrain {
@@ -34,12 +44,12 @@
   color: #f687b3;
 }
 
-.desktopNav {
+.signInUp {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .desktopNav {
+  .signInUp {
     display: flex;
     align-items: center;
     gap: 1rem;

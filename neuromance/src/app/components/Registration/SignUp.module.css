@@ -1,0 +1,80 @@
+.registrationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #ffffff;
+  padding: 20px;
+}
+
+.registrationHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registrationHeader h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #318ce7;
+  margin-bottom: 10px;
+}
+
+.registrationHeader .desc {
+  font-size: 1rem;
+  color: #a1a1aa;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.nameFields {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.registrationFooter {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.registerBtn {
+  background-color: #318ce7;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: #276cbb;
+}
+
+.login {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #a1a1aa;
+}
+
+.login a {
+  color: #318ce7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}

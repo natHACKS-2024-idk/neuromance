@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Registration.module.css";
+import styles from "./SignUp.module.css";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";

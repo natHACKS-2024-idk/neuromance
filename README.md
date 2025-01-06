@@ -1,5 +1,7 @@
 # NeuRomance
 
+NeuRomance introduces a groundbreaking approach to online matchmaking, addressing widespread dissatisfaction with traditional dating apps. By using biosignal synchronization as a predictor of romantic compatibility, NeuRomance provides users with a scientifically-backed, efficient, and meaningful way to form connections.
+
 # Structure
 
 ## Neuromance

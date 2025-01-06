@@ -12,11 +12,13 @@ export default function Navbar(): JSX.Element {
   };
 
   const navigateToSignIn = () => {
-    navigate("/register");
+    console.log("Navigate to Sign In");
+    navigate("/login");
   };
 
   const navigateToSignUp = () => {
     console.log("Navigate to Sign Up");
+    navigate("/sign-up");
   };
 
   return (
@@ -36,7 +38,7 @@ export default function Navbar(): JSX.Element {
                 className={styles.signInButton}
                 onClick={navigateToSignIn}
               >
-                Sign In
+                Login
               </button>
 
               <button
